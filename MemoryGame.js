@@ -61,20 +61,21 @@ function createDivsForColors(colorArray) {
 let count = 0;
 function handleCardClick(event) {
    // let cardColor = event.target.className;
-   if (event.target.classList.contains.not("match")){
+   if (!event.target.classList.contains("match")){
     event.target.style.backgroundColor = event.target.className;
     count++;
-    // if (count = 2){count = 0;
+    for (let i = 0; i<=2; i++)
+    if (count = 2){count = 0;
     //     const resets = document.querySelectorAll("div");
     //     for(let reset of resets){
-    //         if((reset.classList.contains("match"))=false){reset.style.backgroundColor = null};
+    //         if(!reset.classList.contains("match")){reset.style.backgroundColor = null};
     // }}
-}}
+}}}
 
 // when the DOM loads
 createDivsForColors(shuffledColors);
 
-// - Clicking a card should change the background color 1
+// - Clicking a card should change the background color 
 //to be the color of the class it has.
 
 // - Users should only be able to change at most two cards 
