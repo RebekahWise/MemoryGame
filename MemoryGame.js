@@ -84,6 +84,7 @@ function isNotMatch(){setTimeout(resetCards,2000);
 })}   
 
 let count = 0;
+let turns = 0;
 
 function handleCardClick(event) {
  cardColor(event);
@@ -93,15 +94,23 @@ if(count === 2){
   const cards = document.querySelectorAll(".clicked");
   if(cards[0].className === cards[1].className){cards.forEach((card) => {card.classList.add("match");
   card.classList.remove("clicked")});
+  let matches = ((document.querySelectorAll(".match")).length);
+let flipped = ((document.querySelectorAll("div")).length-1);
+if(matches === flipped) {setTimeout(alert("YOU WIN!!!"),2000)};
 }
 //if it's not a match, the not match function runs and the count is reset to 0
 else {isNotMatch();}
-count = 0;}
+count = 0;
+turns++;
+let turn = document.querySelector("h2");
+turn.innerText = "Turns: "+ `${turns}`;
+}
 
+// let cards = ((document.querySelectorAll(".match")).length);
+// let flipped = ((document.querySelectorAll("div")).length-1);
+// if(cards = flipped) {alert("YOU WIN!!!")};
 }
   
- 
-
 
 // when the DOM loads
 createDivsForColors(shuffledColors);
